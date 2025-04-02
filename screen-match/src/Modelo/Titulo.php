@@ -1,6 +1,6 @@
 <?php
 
-class Titulo
+abstract class Titulo
 {
     private array $notas;
 
@@ -25,8 +25,6 @@ class Titulo
         return $somaNotas / $quantidadeNotas;
     }
 
-    public function duracaoEmMinutos(): int
-    {
-        return 0;
-    }
+    // Método abstrato que deve ser implementado pelas classes filhas
+    abstract public function duracaoEmMinutos(): int;
 }
