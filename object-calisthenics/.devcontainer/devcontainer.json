@@ -79,13 +79,7 @@
 			"editor.tabSize": 4,
 			"terminal.integrated.defaultProfile.linux": "ash",
 			"php.validate.executablePath": "/usr/local/bin/php",
-			"php.validate.pathToPhp": "/usr/local/bin/php",
-			"intelephense.environment.phpVersion": "7.4",
-			"intelephense.environment.includePaths": [
-				"/usr/local/include/php",
-				"/var/www/object-calisthenics/.intelephense-stubs"
-			],
-			"intelephense.trace.server": "verbose"
+			"php.validate.pathToPhp": "/usr/local/bin/php"
 		}
 	}
 	// Uncomment to connect as an existing user other than the container default. More info: https://aka.ms/dev-containers-non-root.
