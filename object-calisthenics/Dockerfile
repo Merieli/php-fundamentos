@@ -1,5 +1,5 @@
 # Defome um valor padrão para a versão do PHP caso não seja passado
-ARG PHP_VERSION=8.3.20-fpm-alpine3.20
+ARG PHP_VERSION=7.4-fpm-alpine3.16
 
 FROM php:${PHP_VERSION}
 
@@ -27,11 +27,10 @@ RUN apk update && apk add --no-cache \
     postgresql-dev \
     curl \
     make \
-    gnu-libiconv-dev \
+    linux-headers \
+    git \
     oniguruma-dev \
-    autoconf \
-    g++ \
-    build-base
+    ${PHPIZE_DEPS}
 
 # --------------------------------------------------------------
 # EXTENSÕES DO PHP
@@ -39,13 +38,10 @@ RUN apk update && apk add --no-cache \
 # Instala extensões do PHP: mysqli, pdo, pdo_mysql, pdo_pgsql, pgsql, session, xml
 RUN docker-php-ext-install mysqli pdo pdo_mysql pdo_pgsql pgsql session xml
 
-# Instala extensões do PHP: zip, simplexml, pcntl, gd, fileinfo e mbstring
-RUN docker-php-ext-install zip simplexml pcntl gd fileinfo mbstring
+RUN docker-php-ext-install zip simplexml pcntl gd fileinfo
 
-# Instala a extensão DS (Data Structures)
-RUN apk add --no-cache git \
-    && pecl install ds \
-    && docker-php-ext-enable ds
+# Instala a extensão DS (Data Structures) - necessária para Ds\Map
+RUN pecl install ds && docker-php-ext-enable ds
 
 # --------------------------------------------------------------    
 # Instala a última versão do Composer para o PHP
@@ -85,9 +81,7 @@ RUN composer install --no-interaction
 # Alias `phpunit` que na verdade executa o comando `./vendor/bin/phpunit`
 # https://phpunit.de/
 # --------------------------------------------------------------
-RUN echo '#!/bin/sh' > /usr/local/bin/phpunit && \
-    echo './vendor/bin/phpunit "$@"' >> /usr/local/bin/phpunit && \
-    chmod +x /usr/local/bin/phpunit
+RUN ln -sf ${APP_DIR}/vendor/bin/phpunit /usr/local/bin/phpunit
 
 # --------------------------------------------------------------
 
