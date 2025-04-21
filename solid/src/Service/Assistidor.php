@@ -2,9 +2,7 @@
 
 namespace Alura\Solid\Service;
 
-use Alura\Solid\Model\AluraMais;
-use Alura\Solid\Model\Curso;
-use Alura\Solid\Model\Pontuavel\Pontuavel;
+use Alura\Solid\Model\Assistivel;
 
 /**
  * Encapsulamento -> é quanto temos um objeto que esconde seu comportamento e só está exposta as 
@@ -14,7 +12,7 @@ use Alura\Solid\Model\Pontuavel\Pontuavel;
  */
 class Assistidor
 {
-    public function assistir(Pontuavel $conteudo)
+    public function assistir(Assistivel $conteudo)
     {
         $conteudo->assistir();
     }
