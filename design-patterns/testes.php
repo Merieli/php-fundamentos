@@ -2,7 +2,7 @@
 
 
 use Alura\DesignPattern\comportamentais\strategy\CalculadoraDeImpostos;
-use Alura\DesignPattern\comportamentais\strategy\ChainOfResponsibility\CalculadoraDeDescontos;
+use Alura\DesignPattern\comportamentais\ChainOfResponsibility\CalculadoraDeDescontos;
 use Alura\DesignPattern\comportamentais\strategy\Impostos\Icms;
 use Alura\DesignPattern\Orcamento;
 

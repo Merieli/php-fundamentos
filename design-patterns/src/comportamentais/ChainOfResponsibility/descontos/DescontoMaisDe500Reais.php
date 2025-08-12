@@ -1,6 +1,6 @@
 <?php
 
-namespace Alura\DesignPattern\comportamentais\strategy\ChainOfResponsibility\descontos;
+namespace Alura\DesignPattern\comportamentais\ChainOfResponsibility\descontos;
 
 use Alura\DesignPattern\Orcamento;
 

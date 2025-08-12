@@ -1,10 +1,10 @@
 <?php
 
-namespace Alura\DesignPattern\comportamentais\strategy\ChainOfResponsibility;
+namespace Alura\DesignPattern\comportamentais\ChainOfResponsibility;
 
-use Alura\DesignPattern\comportamentais\strategy\ChainOfResponsibility\descontos\DescontoMaisDe500Reais;
-use Alura\DesignPattern\comportamentais\strategy\ChainOfResponsibility\descontos\DescontoMaisDe5Itens;
-use Alura\DesignPattern\comportamentais\strategy\ChainOfResponsibility\descontos\SemDesconto;
+use Alura\DesignPattern\comportamentais\ChainOfResponsibility\descontos\DescontoMaisDe500Reais;
+use Alura\DesignPattern\comportamentais\ChainOfResponsibility\descontos\DescontoMaisDe5Itens;
+use Alura\DesignPattern\comportamentais\ChainOfResponsibility\descontos\SemDesconto;
 use Alura\DesignPattern\Orcamento;
 
 /**
