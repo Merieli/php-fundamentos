@@ -21,7 +21,6 @@ class CalculadoraDeDescontos
             )
         );
 
-
         return $cadeiaDeDescontos->calculaDesconto($orcamento);
     }
 }
