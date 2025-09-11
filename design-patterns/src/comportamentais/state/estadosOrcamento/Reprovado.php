@@ -2,7 +2,7 @@
 
 namespace Alura\DesignPattern\comportamentais\state\estadosOrcamento;
 
-use Alura\DesignPattern\state\Orcamento;
+use Alura\DesignPattern\comportamentais\state\Orcamento;
 use DomainException;
 
 class Reprovado extends EstadoOrcamento

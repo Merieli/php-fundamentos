@@ -2,13 +2,10 @@
 
 namespace Alura\DesignPattern\comportamentais\command;
 
-use Alura\DesignPattern\state\Orcamento;
-use DateTimeImmutable;
-
 /**
  * Classe com padrão Command a ser executada para preparar o pedido
  */
-class GerarPedido implements Command
+class GerarPedido 
 {
     public function __construct(
         private float $valorOrcamento,
@@ -17,18 +14,27 @@ class GerarPedido implements Command
     ) {
     }
 
-    public function execute(): void
+    /**
+     * Get the value of nomeCliente
+     */
+    public function getNomeCliente()
     {
-        $orcamento = new Orcamento();
-        $orcamento->quantidadeItens = $this->numeroItens;
-        $orcamento->valor = $this->valorOrcamento;
+            return $this->nomeCliente;
+    }
 
-        $pedido = new Pedido();
-        $pedido->dataFinalizacao = new DateTimeImmutable();
-        $pedido->nomeCliente = $this->nomeCliente;
-        $pedido->orcamento = $orcamento;
+    /**
+     * Get the value of numeroItens
+     */
+    public function getNumeroItens()
+    {
+            return $this->numeroItens;
+    }
 
-        echo 'Cria pedido no banco de dados' . PHP_EOL;
-        echo 'Envia e-mail para o cliente' . PHP_EOL;
+    /**
+     * Get the value of valorOrcamento
+     */
+    public function getValorOrcamento()
+    {
+            return $this->valorOrcamento;
     }
 }

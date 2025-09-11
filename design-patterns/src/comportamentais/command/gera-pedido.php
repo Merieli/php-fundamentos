@@ -1,6 +1,7 @@
 <?php
 
 use Alura\DesignPattern\comportamentais\command\GerarPedido;
+use Alura\DesignPattern\comportamentais\command\GerarPedidoHandler;
 
 require_once __DIR__ . '/../../../vendor/autoload.php';
 
@@ -9,5 +10,6 @@ $numeroDeItens = $argv[2];
 $nomeCliente = $argv[3];
 
 $gerarPedido = new GerarPedido($valorOrcamento, $numeroDeItens, $nomeCliente);
-$gerarPedido->execute();
+$gerarPedidoHandler = new GerarPedidoHandler();
+$gerarPedidoHandler->execute($gerarPedido);
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Alura\DesignPattern\state;
+namespace Alura\DesignPattern\comportamentais\state;
 
 use Alura\DesignPattern\comportamentais\state\estadosOrcamento\EmAprovacao;
 use Alura\DesignPattern\comportamentais\state\estadosOrcamento\EstadoOrcamento;

@@ -2,7 +2,7 @@
 
 namespace Alura\DesignPattern\comportamentais\command;
 
-use Alura\DesignPattern\state\Orcamento;
+use Alura\DesignPattern\comportamentais\state\Orcamento;
 use DateTimeInterface;
 
 class Pedido
