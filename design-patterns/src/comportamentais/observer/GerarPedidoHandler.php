@@ -1,10 +1,9 @@
 <?php
 
-namespace Alura\DesignPattern\comportamentais\command;
+namespace Alura\DesignPattern\comportamentais\observer;
 
-use Alura\DesignPattern\comportamentais\observer\acoesAoGerarPedido\CriarPedidoNoDB;
-use Alura\DesignPattern\comportamentais\observer\acoesAoGerarPedido\EnviarPedidoPorEmail;
-use Alura\DesignPattern\comportamentais\observer\acoesAoGerarPedido\LogGerarPedido;
+use Alura\DesignPattern\comportamentais\command\Pedido;
+use Alura\DesignPattern\comportamentais\observer\acoesAoGerarPedido\AcaoAposGerarPedido;
 use Alura\DesignPattern\comportamentais\state\Orcamento;
 use DateTimeImmutable;
 
@@ -14,12 +13,22 @@ use DateTimeImmutable;
  */
 class GerarPedidoHandler
 {
+    private array $acoesAposGerarPedido = [];
+
     public function __construct(/* PedidoRepository, MailService */) {
+    }
+
+    /**
+     * Adiciona as acoes que serao executadas pós geracao de pedido
+     */
+    public function adicionarAcaoAoGerarPedido(AcaoAposGerarPedido $acao)
+    {
+        $this->acoesAposGerarPedido[] = $acao;
     }
 
     public function execute(GerarPedido $gerarPedido): void
     {
-        $orcamento = new Orcamento();
+         $orcamento = new Orcamento();
         $orcamento->quantidadeItens = $gerarPedido->getNumeroItens();
         $orcamento->valor = $gerarPedido->getValorOrcamento();
 
@@ -28,12 +37,8 @@ class GerarPedidoHandler
         $pedido->nomeCliente = $gerarPedido->getNomeCliente();
         $pedido->orcamento = $orcamento;
 
-        $pedidosReposItory = new CriarPedidoNoDB();
-        $logGerarPedido = new LogGerarPedido();
-        $enviarPedidoPorEmail = new EnviarPedidoPorEmail();
-        
-        $pedidosReposItory->executaAcao($pedido);
-        $logGerarPedido->executaAcao($pedido);
-        $enviarPedidoPorEmail->executaAcao($pedido);
+        foreach ($this->acoesAposGerarPedido as $acao) {
+            $acao->executaAcao($pedido);
+        }
     }
 }
