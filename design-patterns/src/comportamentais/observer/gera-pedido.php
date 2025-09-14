@@ -17,8 +17,8 @@ $gerarPedido = new GerarPedido($valorOrcamento, $numeroDeItens, $nomeCliente);
 $gerarPedidoHandler = new GerarPedidoHandler();
 
 $gerarPedidoHandler->adicionarAcaoAoGerarPedido(new CriarPedidoNoDB());
-$gerarPedidoHandler->adicionarAcaoAoGerarPedido(new LogGerarPedido());
 $gerarPedidoHandler->adicionarAcaoAoGerarPedido(new EnviarPedidoPorEmail()); 
+$gerarPedidoHandler->adicionarAcaoAoGerarPedido(new LogGerarPedido());
         
 $gerarPedidoHandler->execute($gerarPedido);
 
