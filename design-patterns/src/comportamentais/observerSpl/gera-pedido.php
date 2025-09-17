@@ -19,6 +19,6 @@ $gerarPedidoHandler = new GerarPedidoHandler();
 $gerarPedidoHandler->attach(new CriarPedidoNoDB());
 $gerarPedidoHandler->attach(new EnviarPedidoPorEmail()); 
 $gerarPedidoHandler->attach(new LogGerarPedido());
-        
+
 $gerarPedidoHandler->execute($gerarPedido);
 
