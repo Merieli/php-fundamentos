@@ -18,6 +18,14 @@ $orcamento = new Orcamento();
 $orcamento->valor = 500;
 $orcamento->quantidadeItens = 7;
 
+/**
+ * O bridge é um padrão que tem a intenção de desacoplar uma abstraçõa da sua implementação, de 
+ * modo que as duas possam variar e evoluir independentemente.
+ * Abstração - código de alto nível que geralmente delega ações para outro objeto.
+ * Implementação - é o código que realmente faz o trabalho.
+ * O problema que leva ao bridge começa quando a Abstração e a implementação crescem juntas.
+ */
+
 /** Esse é o conteudo exportado */
 $orcamentoExportado = new OrcamentoExportado($orcamento);
 /** Esta é a ponte entre o conteúdo exportado e a implementação de um arquivo exportado */
