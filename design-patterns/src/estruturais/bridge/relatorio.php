@@ -24,6 +24,26 @@ $orcamento->quantidadeItens = 7;
  * Abstração - código de alto nível que geralmente delega ações para outro objeto.
  * Implementação - é o código que realmente faz o trabalho.
  * O problema que leva ao bridge começa quando a Abstração e a implementação crescem juntas.
+ * 
+ * Diferenças entre Bridge e Adapter: A diferença chave entre esses padrões está nas suas 
+ * intenções... O padrão Adapter faz as coisas funcionarem APÓS elas terem sido projetadas;
+ * o Bridge as faz funcionar ANTES QUE existam...
+ * 
+ * Use o padrão Bridge quando:
+ * - você souber que sua estrutura terá abstrações (código de alto nível) e implementações
+ * dessa abstração (detalhes) que possam variar de maneira independente
+ * - você souber que o Adapter poderia ser aplicado naquela estrutura (você já conhece a estrutura)
+ * - você quiser dividir uma classe que possa ter diversas variantes (como em produtos e suas
+ * variações de cores: CanetaAzul, Caneta Vermelha, CamisetaAzul, Camiseta Vermelha, etc...)
+ * - você quer trocar as implementações em tempo de execução
+ * 
+ * Vantagens:
+ * - Desacopla o código da abstração do código da implementação (SRP)
+ * - Implementa o OCP ao permitir novas abstrações e/ou implementações para código existente
+ * - Tem as mesmas vantagens do Adapter
+ * 
+ * Desvantagens:
+ * - Aumenta a complexidade da aplicação quando implementado em locais incorretos
  */
 
 /** Esse é o conteudo exportado */
