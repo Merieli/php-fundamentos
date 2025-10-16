@@ -10,6 +10,8 @@ use DomainException;
  * O pattern proxy controla o acesso a um objeto original, com ele se tem um substituto que contém
  * o objeto original, por isso é possível realizar uma ação antes ou depois de obter o objeto
  * original.
+ * 
+ * Tem como intenção principal interceptar a chamada a métodos e propriedades.
  */
 class CacheOrcamentoProxy extends Orcamento
 {
