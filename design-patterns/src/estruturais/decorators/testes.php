@@ -16,7 +16,8 @@ $orcamento->valor = 100;
 /**
  * O padrão decorator permite a adição de funcionalidades em classes em tempo de execução do 
  * software, ou seja, adicionar comportamento a um comportamento já existente. O decorator precisa
- * possuir a mesma interface do objeto que ele está decorando.
+ * possuir a mesma interface do objeto que ele está decorando. 
+ * Tem como função adicionar funcionalidades.
  * 
  * Da forma como foi aplicado um imposto aqui pode acabar sendo decorado com outro, ou seja, ter
  * a funcionalidade de um determinado imposto adicionada a outro imposto.
