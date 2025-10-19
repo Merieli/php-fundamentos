@@ -29,7 +29,9 @@ $itemNota2->valor = 200;
 
 /**
  * Essa forma de copiar um objeto é um design pattern chamado Prototype, que também é conhecido 
- * como "Clone"
+ * como "Clone". Ele permite copiar um objeto existente sem fazer com que o código seja dependente
+ * da classe em si, ou seja, não é necessário copiar propriedade por propriedade com alta 
+ * dependência.
  */
 $notaFiscal2 = clone $notaFiscal; 
 $notaFiscal2->itens[] = $itemNota2;
