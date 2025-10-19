@@ -1,6 +1,6 @@
 <?php
 
-namespace Alura\DesignPattern\criacionais\factory\Venda;
+namespace Alura\DesignPattern\criacionais\abstractFactory\Venda;
 
 use DateTimeImmutable;
 

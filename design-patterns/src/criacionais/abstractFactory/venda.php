@@ -1,8 +1,7 @@
 <?php
 
-use Alura\DesignPattern\criacionais\factory\Venda\VendaProduto;
-use Alura\DesignPattern\criacionais\factory\Venda\VendaProdutoFactory;
-use Alura\DesignPattern\criacionais\factory\Venda\VendaServicoFactory;
+use Alura\DesignPattern\criacionais\abstractFactory\Venda\VendaProdutoFactory;
+use Alura\DesignPattern\criacionais\abstractFactory\Venda\VendaServicoFactory;
 
 require __DIR__ . '/../../../vendor/autoload.php';
 
