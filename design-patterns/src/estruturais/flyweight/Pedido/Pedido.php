@@ -1,6 +1,6 @@
 <?php
 
-namespace Alura\DesignPattern\estruturais\flyweight;
+namespace Alura\DesignPattern\estruturais\flyweight\pedido;
 
 use Alura\DesignPattern\comportamentais\state\Orcamento;
 
@@ -28,6 +28,6 @@ use Alura\DesignPattern\comportamentais\state\Orcamento;
  */
 class Pedido
 {
-    public DadosExtrinsecosPedido $dados;
+    public TemplatePedido $template;
     public Orcamento $orcamento;
 }

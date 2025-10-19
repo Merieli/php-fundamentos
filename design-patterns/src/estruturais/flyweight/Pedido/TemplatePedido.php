@@ -1,13 +1,13 @@
 <?php
 
-namespace Alura\DesignPattern\estruturais\flyweight;
+namespace Alura\DesignPattern\estruturais\flyweight\pedido;
 
 use DateTimeInterface;
 
 /**
  * Objeto imutável que não pode ser modificado depois de criado.
  */
-class DadosExtrinsecosPedido
+class TemplatePedido
 {
     private string $nomeCliente;
     private DateTimeInterface $dataFinalizacao;
