@@ -84,5 +84,20 @@ Usando a DS temos a interface Collection que é implementada por várias estrutu
 
 ### Vector
 
-Um vextor é uma estrutura de dados que armazena uma coleção ordenada de elementos. Ele permite acesso rápido aos elementos por índice e é dinâmico, ou seja, pode crescer ou diminuir conforme necessário.
+Um vector é uma estrutura de dados que armazena uma coleção ordenada de elementos. Ele permite acesso rápido aos elementos por índice e é dinâmico, ou seja, pode crescer ou diminuir conforme necessário.
+
+
+### Deque
+
+Cresce semprena potência de 2, mas diferente do array normal ele cresce tanto para frente quanto para trás, ou seja, é possível adicionar elementos no início e no fim da coleção de forma eficiente.
+
+
+### Stack
+
+É estilo FIFO e tem um certo ganho de performance, além de possuir uma interface mais amigável para trabalhar com pilhas (stack) em comparação com arrays tradicionais do PHP.
+
+
+### Queue
+
+É estilo LIFO e também possui uma interface mais amigável para trabalhar com filas (queue) em comparação com arrays tradicionais do PHP. Possui métodos específicos para enfileirar e desenfileirar elementos de forma eficiente.
 
