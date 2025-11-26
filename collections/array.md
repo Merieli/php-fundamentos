@@ -102,10 +102,13 @@ Cresce semprena potência de 2, mas diferente do array normal ele cresce tanto p
 É estilo LIFO e também possui uma interface mais amigável para trabalhar com filas (queue) em comparação com arrays tradicionais do PHP. Possui métodos específicos para enfileirar e desenfileirar elementos de forma eficiente.
 
 
-
 ### Set
 
 Um set é uma coleção de elementos únicos, ou seja, não permite elementos duplicados. Ele é útil quando você precisa garantir que cada elemento apareça apenas uma vez na coleção.
 
 Ele tem o mesmo problema da SplObjectStorage em relação a objetos, ou seja, não permite customizar a forma de comparação entre os objetos, usando o hash como chave.
 
+
+## Hashable
+
+A interface Hashable permite que você defina como um objeto deve ser convertido em um hash, o que é útil quando você deseja usar objetos como chaves em coleções que exigem unicidade, como conjuntos (sets) ou mapas (maps).
